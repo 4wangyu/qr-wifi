@@ -1,0 +1,59 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  padding: 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.print {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 60px;
+}
+
+.qrcode {
+  margin-right: 40px;
+}
+
+.form {
+  input {
+    &:not(:last-child) {
+      margin-bottom: 33px;
+    }
+
+    width: 244px;
+  }
+}
+
+.print-btn {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+@media print {
+  // remove header & footer
+  @page {
+    margin: 0;
+  }
+
+  .app {
+    justify-content: center;
+  }
+
+  .print * {
+    zoom: 120%;
+  }
+
+  .print-btn {
+    display: none;
+  }
+}
+
+.card:hover {
+  transform: translate3d(0, 0, 0);
+  box-shadow: 15px 28px 25px -18px rgba(0, 0, 0, 0.2);
+}
